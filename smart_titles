@@ -1,0 +1,72 @@
+1	Read Error Rate	Frequency of errors during read operations.
+2	Throughput Performance	Overall performance of a device.
+3	Spin-Up Time	Time required a spindle to spin up to operational speed. This parameter is not used with an SSD, because obviously an SSD has no moving parts.
+4	Start/Stop Count	Estimated remaining life, based on the number of spin-up/spin-down cycles. The value counts down, typically from 100 to 0. The Raw value holds the actual number of cycles.
+5	Reallocated Sectors Count	The number of the unused spare sectors. When encountering a read/write/check error, a device remaps a bad sector to a "healthy" one taken from a special reserve pool. Normalized value of the attribute decreases as the number of available spares decreases.On a regular hard drive, Raw value indicates the number of remapped sectors, which should normally be zero. On an SSD, the Raw value indicates the number of failed flash memory blocks.
+6	Read Channel Margin	There is no reliable information available about this attribute.
+7	Seek Error Rate	Frequency of the errors during disk head positioning.
+8	Seek Time Performance	Characterizes performance of mechanical seeks of a disk head. An SSD doesn’t use this attribute.
+9	Power-On Hours Count	Estimated remaining lifetime, based on the time a device was powered on. The normalized value decreases over time, typically from 100 to 0. The Raw value shows the actual powered-on time, usually in hours.
+10	Spin-up Retries	The Raw value of the attribute shows the number of unsuccessful attempts to spin a spindle up to operational speed. For a rotational drive, this is fairly critical. An SSD does not use this attribute because there is nothing to spin up.
+11	Calibration Retries	A Raw value typically stores the number of unsuccessful read head and positioning system calibrations.
+12	Power Cycle Count	Estimated remaining life, based on the number of power on/off cycles. The value counts down, typically from 100 to 0. The Raw value holds the actual number of power cycles.
+13	Soft Read Error Rate	There is no certainity about the meaning of this attribute. Some bits of documentation quote this as the number of errors not corrected by ECC and subsequently reported to the host controller. Others conversely say this is the number of errors corrected by ECC.
+100	Erase/Program Cycles	The total count of erase/program cycles for entire flash memory in its entire lifetime. An SSD has a limit on how many times one can write to it. The exact values depend on a type and make of the flash memory chip.
+103	Translation Table Rebuild	The number of events when internal tables of block addresses were damaged and subsequently rebuilt. The Raw value of this attribute indicates the actual event count.
+108	Unknown (108)	There is no reliable information available about this attribute.
+170	Reserved Block Count	On an SSD, this attribute describes the state of the reserve block pool. The value of the attribute shows the percentage of the pool remaining. The Raw value sometimes contains the actual number of used reserve blocks.
+171	Program Fail Count	The number of times when write to a flash memory failed. The write process is technically called "programming the flash memory", hence the attribute name. When the flash memory is worn out, it cannot be written to any longer and becomes read-only. The Raw value shows the actual number of failures.
+172	Erase Fail Count	The number of times when erase operation on a flash memory failed. The complete write cycle of a flash memory consists of two stages. The memory has to be erased first, and then the data has to be recorded ("programmed") onto the memory. When the flash memory is worn out, it cannot be written to any longer and becomes read-only. The Raw value shows the actual number of failures.
+173	Wear Leveller Worst Case Erase Count	The maximum number of erase operations performed on a single flash memory block.
+174	Unexpected Power Loss	The number of unexpected power outages when the power was lost before a command to turn off the disk is received. On a hard drive, the lifetime with respect to such shutdowns is much less than in case of normal shutdown. On an SSD, there is a risk of losing the internal state table when an unexpected shutdown occurs.
+175	Program Fail Count	The number of times when write to a flash memory failed. The write process is technically called "programming the flash memory", hence the attribute name. When the flash memory is worn out, it cannot be written to any longer and becomes read-only. The Raw value shows the actual number of failures.
+176	Erase Fail Count	The number of times when erase operation on a flash memory failed. The complete write cycle of a flash memory consists of two stages. The memory has to be erased first, and then the data has to be recorded ("programmed") onto the memory. When the flash memory is worn out, it cannot be written to any longer and becomes read-only. The Raw value shows the actual number of failures.
+177	Wear Leveling Count	The maximum number of erase operations performed on a single flash memory block.
+178	Used Reserved Block Count	On an SSD, this attribute describes the state of the reserve block pool. The value of the attribute shows the percentage of the pool remaining. The Raw value sometimes contains the actual number of used reserve blocks.
+179	Used Reserved Block Count	On an SSD, this attribute describes the state of the reserve block pool. The value of the attribute shows the percentage of the pool remaining. The Raw value sometimes contains the actual number of used reserve blocks.
+180	Unused Reserved Block Count	On SSD, this attribute describes the state of the reserve block pool. The value of the attribute shows the percentage of the pool remaining. The Raw value sometimes contains the actual number of unused reserve blocks.
+181	Program Fail Count	The number of times when write to a flash memory failed. The write process is technically called "programming the flash memory", hence the attribute name. When the flash memory is worn out, it cannot be written to any longer and becomes read-only. The Raw value shows the actual number of failures.
+182	Erase Fail Count	The number of times when erase operation on a flash memory failed. The complete write cycle of a flash memory consists of two stages. The memory has to be erased first, and then the data has to be recorded ("programmed") onto the memory. When the flash memory is worn out, it cannot be written to any longer and becomes read-only. The Raw value shows the actual number of failures.
+183	SATA Downshifts	Indicates how often it was required to decrease the SATA transmission speed (from 6 Gbps to 3 or 1.5 Gbps, or from 3 Gbps to 1.5 Gbps) in order to transfer data successfully. If the attribute value is decreasing, try replacing the SATA cable.
+184	End-to-End error	The number of data corruption occurrences in the internal disk cache. The malfunctions of the cache memory, indicated by this attribute, are fairly critical to the proper operation.
+185	Head Stability	There is no reliable information available about this attribute.
+186	Induced Op-Vibration Detection	There is no reliable information available about this attribute.
+187	Reported Uncorrectable Errors	The number of UNC errors, i.e. read errors which Error Correction Code (ECC) failed to recover.
+188	Command Timeout	The number of operations which were interrupted due to HDD timeout.
+189	High Fly Writes	The number of write errors caused by the fact that a write head was outside normal range of height above disk platter.
+190	Temperature	Temperature, monitored by a sensor somewhere inside the drive. Raw value typicaly holds the actual temperature (hexadecimal) in its rightmost two digits.
+191	G-Sense Errors	Indicates how many times a disk stopped working due to shock or vibration. Typically, this attribute is used in laptop hard drives. In desktop hard drives, sometimes the attribute is listed but never changes, because apparently the vibration detection circuitry is not available.
+192	Power-Off Retract Cycles	The number of unexpected power outages when the power was lost before a command to turn off the disk is received. On a hard drive, the lifetime with respect to such shutdowns is much less than in case of normal shutdown. On an SSD, there is a risk of losing the internal state table when an unexpected shutdown occurs.
+193	Load/Unload Cycles	The number of head movement cycles between the data zone and the head parking area or a dedicated unload ramp.The value counts down, typically from 100 to 0. The Raw value typically holds the actual number of cycles.
+194	Temperature	Temperature, monitored by a sensor somewhere inside the drive. Raw value typicaly holds the actual temperature (hexadecimal) in its rightmost two digits.
+195	Hardware ECC Recovered	The number of errors which were corrected using Error Correction Code.
+196	Reallocation Events	The total number of reallocation events. This includes both off-line reallocations and reallocations during actual write operations.
+197	Current Pending Sectors	The number of unstable sectors which are waiting to be re-tested and possibly remapped.
+198	Off-line Uncorrectable	The number of bad sectors which were detected during offline scan of a disk. When idling, a modern disk starts to test itself, the process known as offline scan, in order to detect possible defects in rarely used surface areas.
+199	UDMA CRC Error Rate	The number of errors occurring when transferring data via a cable between a disk and a motherboard port. If the value decreases, try replacing the ATA cable. On Parallel ATA drives, avoid "round" cables.
+200	Write Error Rate	Rate of errors during write.
+201	Soft Read Errors	There is no certainity about the meaning of this attribute. Some bits of documentation quote this as the number of errors not corrected by ECC and subsequently reported to the host controller. Others conversely say this is the number of errors corrected by ECC.
+202	Data Address Mark Errors	The number of errors encountered when a read head searches for a requested sector.
+203	Run Out Cancel	The number of errors caused by incorrect checksum during the error correction.
+204	Soft ECC Corrections	The number of errors which were corrected using Error Correction Code.
+205	Thermal Asperity Rate	A rate at which read errors occur due to short-term temperature fluctuations on a hard drive read head.
+206	Flying Height	Deviation of a head height above the disk surface from the optimal height value. If a head is too close to the disk surface, there is a risk of mechanical damage. If a head is too far from the disk surface, read/write errors may happen.
+207	Spin High Current	Amount of current needed to spin a hard disk up. Only used in rotational hard drives.
+209	Offline Seek Performance	Characterizes performance of seek operations of a disk head measured during an offline scan.
+220	Disk Shift	Distance the disk has shifted in relation to the theoretical spindle axis due to mechanical damage or overheating.
+221	G-Sense Error Rate	Indicates how many times a disk stopped working due to shock or vibration. Typically, this attribute is used in laptop hard drives. In desktop hard drives, sometimes the attribute is listed but never changes, because apparently the vibration detection circuitry is not available.
+222	Loaded Hours	Time a disk head spent in the data zone, rather than in the parking area or on a head ramp. The value counts down, typically from 100 to 0. The Raw value often holds the actual number of hours.
+223	Load/Unload Retries	The number of failures when moving a head from the data area to the parking area and vice versa.
+224	Load Friction	Friction associated with moving a head between the data area and the parking area, especially for the disks with dedicated unload ramp.
+225	Load/Unload Cycles	The number of head movement cycles between the data zone and the head parking area or a dedicated unload ramp.The value counts down, typically from 100 to 0. The Raw value typically holds the actual number of cycles.
+226	Load-in Time	Time a disk head spent in the data zone, rather than in the parking area or on a head ramp. The value counts down, typically from 100 to 0. The Raw value often holds the actual number of hours.
+227	Torque Amplification Count	Indicates how many times it was required to use high current to spin a hard disk up or to maintain rotational speed.
+228	Power-Off Retracts	The number of unexpected power outages when the power was lost before a command to turn off the disk is received. On a hard drive, the lifetime with respect to such shutdowns is much less than in case of normal shutdown. On an SSD, there is a risk of losing the internal state table when an unexpected shutdown occurs.
+230	GMR Head Amplitude	Amplitude of disk head oscillations.
+231	Temperature	Temperature, monitored by a sensor somewhere inside the drive. Raw value typicaly holds the actual temperature (hexadecimal) in its rightmost two digits.
+232	Available Reserved Space	The attribute is used in SSDs to denote the remaining reserved space. The value counts down, typically from 100 to 0. The Raw value is vendor-specific.
+233	Media Wearout Indicator	Remaining flash memory life (on an SSD).
+240	Head Flying Hours	Time a disk head spent in the data zone, rather than in the parking area or on a head ramp. The value counts down, typically from 100 to 0. The Raw value often holds the actual number of hours.
+241	Total LBAs Written	The total number of 512-byte sectors written during the entire lifetime of the device.
+242	Total LBAs Read	The total number of 512-byte sectors read during the entire lifetime of the device.
+250	Read Error Retry Rate	There is no reliable information available about this attribute.
