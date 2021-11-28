@@ -1,0 +1,14 @@
+ST4000DM000:
+- SMART_2       Throughput Performance
+- SMART_8       Seek Time Performance
+- SMART_195     Hardware ECC Recovered
+- SMART_196     Reallocation Events
+- SMART_200     Write Error Rate
+
+ST12000NM0007:
+- SMART_2       Throughput Performance
+- SMART_8       Seek Time Performance
+- SMART_184     End-to-End error
+- SMART_189     High Fly Writes
+- SMART_191     G-Sense Errors
+- SMART_196     Reallocation Events
